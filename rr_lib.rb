@@ -16,10 +16,10 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>
 
 #ensure translation is working before actually installing
-LOCALE=[ENV['PWD'] + "/locale", "/usr/local/share/locale"]
+LOCALE=[ENV['PWD'] + "/locale", "/usr/share/locale"]
 LOCALE.each{|dir| if File.directory?(dir) ; ENV['GETTEXT_PATH'] = dir ; break end}
 
-$rr_version = '0.6.0rc1' #application wide setting
+$rr_version = '0.6.1' #application wide setting
 
 begin
 	require 'gettext'

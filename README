@@ -104,6 +104,10 @@ but it may not work on audio-cd's with a data track.
 
 
 4. CHANGELOG
+---------0.6.1 RELEASE------
+* added freedb support for ruby-2.X
+* fixed error when prime character present in song title
+* corrected rubydir prefix handling in configure script
 ---------0.6.0 RELEASE------
 * many ruby-1.9 fixes
 * get advanced toc scanning with help of cdrdao
@@ -316,4 +320,5 @@ A: See the wiki for instructions
 
 6. RELEVANT URLS
 
-Bug tracker + filehosting + subversion server + wiki : http://code.google.com/p/rubyripper/
+Source cod + bug tracker: https://github.com/tsujamin/rubyripper
+Original Bug tracker + filehosting + subversion server + wiki : http://code.google.com/p/rubyripper/
