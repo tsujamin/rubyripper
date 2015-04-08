@@ -32,14 +32,15 @@ $RUBYDIR= '/lib/rubyripper' #in case site_ruby doesn't return any matches
 
 $:.each do |ruby_dir|
 	if ruby_dir.include?("site_ruby")
-		if ruby_dir[0..3] == "/usr"
-			$RUBYDIR = ruby_dir[4..-1] # '/usr' is prepended by $PREFIX later
+		if ruby_dir.start_with? $PREFIX
+			$RUBYDIR = ruby_dir[$PREFIX.length..-1] #prepended by $PREFIX later
 		else
 			$RUBYDIR = ruby_dir
 		end
 		break
 	end
 end
+
 
 if RUBY_PLATFORM.include?('darwin')
 	$INSTALL = 'install'
@@ -192,6 +193,12 @@ unless ($GTK2 || $CLI)
 	puts ""
 	exit()
 end
+
+
+if $RUBYDIR.start_with? $PREFIX
+	$RUBYDIR = $RUBYDIR[$PREFIX.length..-1] #prepended by $PREFIX later
+end
+	
 
 check_deps()
 
